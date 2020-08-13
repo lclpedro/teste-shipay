@@ -1,4 +1,4 @@
-from app import db
+from shipay import db
 
 from shipay.models.estabelecimento import Estabelecimento
 

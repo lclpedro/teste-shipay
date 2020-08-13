@@ -1,12 +1,12 @@
 from shipay.models import Estabelecimento, Recebimento
 from flask import jsonify
-from app import db
+from shipay import db
 
 
 def criar_estabelecimento(data):
     consulta = Estabelecimento.query.filter_by(cnpj=data['cnpj']).first()
     if consulta:
-        return jsonify(error='Estabelecimento já cadastrado com este CNPJ.')
+        return jsonify(error='Estabelecimento já cadastrado com este CNPJ.'), 400
     novo_estabelecimento = Estabelecimento(**data)
     db.session.add(novo_estabelecimento)
     try:
