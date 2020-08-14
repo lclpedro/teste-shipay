@@ -1,4 +1,4 @@
-from shipay import db
+from app import db
 
 class Estabelecimento(db.Model):
     __tablename__ = 'estabelecimento'

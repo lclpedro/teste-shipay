@@ -1,6 +1,6 @@
 from shipay.models import Estabelecimento, Recebimento
 from flask import jsonify
-from shipay import db
+from app import db
 
 
 def criar_estabelecimento(data):
